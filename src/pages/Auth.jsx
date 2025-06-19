@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '../axios';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -26,7 +26,7 @@ const Auth = () => {
           {isLogin ? 'Login' : 'Register'}
         </h2>
         <input type="text" name="username" placeholder="Username" value={form.username} onChange={handleChange} className="w-full mb-2 p-2 border rounded" required />
-        <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} className="w-full mb-4 p-2 border rounded" required />
+        <input type="password" name="password" value={form.password} placeholder="Password" onChange={handleChange} className="w-full mb-4 p-2 border rounded" required />
         <button className="w-full bg-blue-600 text-white py-2 rounded">{isLogin ? 'Login' : 'Register'}</button>
         <p className="mt-4 text-center text-sm">
           {isLogin ? 'No account?' : 'Already registered?'}{' '}
